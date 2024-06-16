@@ -1,9 +1,9 @@
 import './App.css'; // Optional if you have custom styles
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Photos from './Components/Photos.jsx';
-import Layout from './Layout.jsx';
-import Favourites from './Components/Favourites.jsx';
+import Photos from './Components/Photos';
+import Layout from './Layout';
+import Favourites from './Components/Favourites';
 import Header from './Components/Header';
 
 function App() {
@@ -62,12 +62,9 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
-     
+    <div className="min-h-screen flex flex-col">
       <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-
-      <div className="container mx-auto">
-        
+      <div className="flex-1 w-full">
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route
@@ -85,7 +82,7 @@ function App() {
             />
             <Route
               path="/favourites"
-              element={<Favourites favouritesPhotos={favouritesPhotos}  handleFavourites={handleFavourites}/>}
+              element={<Favourites favouritesPhotos={favouritesPhotos} handleFavourites={handleFavourites} />}
             />
           </Route>
         </Routes>
