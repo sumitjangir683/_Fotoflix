@@ -1,13 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { FaDownload, FaHeart, FaShare } from 'react-icons/fa';
 
-
-
 export default function Photos({ photos = [], handleFavourites, favouritesPhotos = [], loading, setPage }) {
-
-  // const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  // const [lightboxIndex, setLightboxIndex] = useState(0);
-
   useEffect(() => {
     const handleScroll = () => {
       if (!loading && window.innerHeight + window.scrollY >= document.body.scrollHeight - 200) {
@@ -32,17 +26,6 @@ export default function Photos({ photos = [], handleFavourites, favouritesPhotos
     document.body.removeChild(link); 
   };
 
-  // const openLightbox = (index) => {
-  //   setLightboxIndex(index);
-  //   setIsLightboxOpen(true);
-  //   console.log("open")
-  // };
-
-  // const closeLightbox = () => {
-  //   setIsLightboxOpen(false);
-  //   console.log("close")
-  // };
-
   const toggleFavourite = (photo) => {
     handleFavourites(photo);
   };
@@ -50,17 +33,16 @@ export default function Photos({ photos = [], handleFavourites, favouritesPhotos
   return (
     <main className="container mx-auto py-8 bg-gray-700">
       <div className="px-4 sm:px-6 lg:px-8">
-        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {loading ? (
             <p className="text-center text-gray-600">Loading...</p>
           ) : (
-            photos.map((photo, index) => (
+            photos.map((photo) => (
               <article key={photo.id} className="relative overflow-hidden rounded-lg shadow-lg bg-white">
                 <img
                   src={photo.urls.small}
                   alt={photo.alt_description}
                   className="w-full h-auto cursor-pointer rounded-t-lg"
-                
                 />
                 <div className="absolute top-0 right-0 p-2 flex items-center space-x-2 bg-gray-900 bg-opacity-75 rounded-tr-lg">
                   <button className="text-white" onClick={() => toggleFavourite(photo)}>
@@ -81,13 +63,6 @@ export default function Photos({ photos = [], handleFavourites, favouritesPhotos
           )}
         </section>
       </div>
-      {/* {isLightboxOpen && (
-//   <Lightbox
-//     slides={photos.map(photo => ({ src: photo.urls.full }))}
-//     currentIndex={lightboxIndex}
-//     close={closeLightbox}
-//   />
-// )} */}
     </main>
   );
 }
