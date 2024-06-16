@@ -1,8 +1,17 @@
-# React + Vite
+FotoFlix
+FotoFlix is a web application designed to showcase a curated collection of photos sourced from Unsplash. Users can browse through a variety of stunning images, mark their favorites, save them to a favorites list for easy access, and enjoy infinite scroll for a continuous photo viewing experience.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
+1) Browse high-quality photos from Unsplash.
+2) Search for photos by keyword.
+3) Mark photos as favorites.
+4) View and manage a list of favorite photos.
+5) Infinite scrolling for seamless photo browsing.
+6) Responsive design for optimal viewing on all devices.
 
-Currently, two official plugins are available:
+Technologies Used
+1) React
+2) Tailwind CSS
+3) Unsplash API
+4) React Icons
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
