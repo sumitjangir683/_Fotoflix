@@ -8,24 +8,23 @@ export default function Favourites({ favouritesPhotos = [], handleFavourites }) 
     handleFavourites(photo);
   };
   
-  // const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  // const [lightboxIndex, setLightboxIndex] = useState(0);
-  
-  // const openLightbox = (index) => {
-  //   setLightboxIndex(index);
-  //   console.log(isLightboxOpen)
-  //   setIsLightboxOpen(true);
-    
-  // };
-  
-  // const closeLightbox = () => {
-  //   setIsLightboxOpen(false);
-  //   console.log("closef")
-  // };
-  
+  const handleShare = (photoUrl) => {
+    const shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(`Checkout this awesome photo: ${photoUrl}`)}`;
+    window.open(shareUrl, '_blank');
+  };
+
+  const handleDownload = (photoUrl, photoId) => {
+    const link = document.createElement('a');
+    link.href = photoUrl;
+    link.download = `photo_${photoId}.jpg`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link); 
+  };
+
   return (
     <main className="container mx-auto py-8 bg-gray-700 px-4 sm:px-6 lg:px-8">
-      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {favouritesPhotos.length === 0 ? (
           <p className="text-center text-gray-200">No favourite photos available</p>
         ) : (
@@ -42,8 +41,8 @@ export default function Favourites({ favouritesPhotos = [], handleFavourites }) 
                   <FaHeart color='red' />
                 </button>
                 <div className="text-white"><FaHeart /> {photo.likes}</div>
-                <button className="text-white"><FaShare /></button>
-                <button className="text-white"><FaDownload /></button>
+                <button className="text-white" onClick={() => handleShare(photo.urls.regular)}><FaShare /></button>
+                <button className="text-white" onClick={() => handleDownload(photo.urls.full, photo.id)}><FaDownload /></button>
               </div>
               <div className="absolute bottom-0 left-0 p-2 flex items-center space-x-2 bg-gray-800 bg-opacity-75 rounded-bl-lg">
                 <a href={photo.user.portfolio_url} target="_blank" rel="noopener noreferrer">
