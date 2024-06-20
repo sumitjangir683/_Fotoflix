@@ -30,7 +30,7 @@ function App() {
           if (searchQuery && page === 1) {
             return data.results;
           } else if (searchQuery) {
-             return data.results;
+             return  [...data.results, ...prevPhotos];
           } else {
             return [...data, ...prevPhotos];
           }
