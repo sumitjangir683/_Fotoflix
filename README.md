@@ -1,17 +1,31 @@
-FotoFlix
-FotoFlix is a web application designed to showcase a curated collection of photos sourced from Unsplash. Users can browse through a variety of stunning images, mark their favorites, save them to a favorites list for easy access, and enjoy infinite scroll for a continuous photo viewing experience.
+# FotoFlix
 
-Features
-1) Browse high-quality photos from Unsplash.
-2) Search for photos by keyword.
-3) Mark photos as favorites.
-4) View and manage a list of favorite photos.
-5) Infinite scrolling for seamless photo browsing.
-6) Responsive design for optimal viewing on all devices.
+## Overview
+FotoFlix is a web-based image browsing and viewing application, allowing users to explore a vast collection of images with an intuitive interface.
 
-Technologies Used
-1) React
-2) Tailwind CSS
-3) Unsplash API
-4) React Icons
+## Tech Stack
+- **Frontend**: HTML, Tailwind CSS, JavaScript, Vite
 
+## Features
+- **Search Images**: Easily search through a large collection of images.
+- **Favorite**: Save favorite images for quick access.
+- **Share**: Share images seamlessly across platforms.
+- **Download**: Download images directly to your device.
+
+## Links
+- **GitHub**: [Repository Link](https://github.com/sumitjangir683/_Fotoflix)
+- **Hosted App**: [Live Link](https://fotoflix-sumit.vercel.app/)
+
+## Deployment
+- Deployed using **Vercel** for fast and efficient hosting.
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone <https://github.com/sumitjangir683/_Fotoflix>
+2. Install dependencies:
+   ```bash
+   npm install
+3. Start the server:
+   ```bash
+   npm run dev
